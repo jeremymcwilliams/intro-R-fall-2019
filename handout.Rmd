@@ -12,7 +12,8 @@ output:
 ### Watzek Library Digital Initiatives
 ### October 30th, 2019
 
-Welcome to the workshop! Much of the content has been borrowed from Harvard University, so thank you Harvard.
+###### Much of the content has been borrowed from Harvard University, so thank you Harvard.
+###### https://tutorials.iq.harvard.edu/R/Rintro/Rintro.html
 
 ### Goals of this workshop:
 
@@ -30,7 +31,7 @@ R code can be run in the console, or as a "code chunk" within this R notebook. B
 2+2
 ```
 
-You can run the code chunk by clicking the green "play" button. Throughout this workshop, there will be a mix of code chunks pre-populated with code, and empty code chunks. The empty code chunks give you an opportunity to write code, run it, and see the output.
+You can run the code chunk by clicking the green "play" button. Throughout this workshop, there will be a mix of code chunks pre-populated with code, and empty code chunks. The empty code chunks give you an opportunity to write code, run it, and see the output. Each of the empty chunks are preceded with "YOUR TURN:".
 
 #### Assigning variables
 
@@ -42,11 +43,31 @@ x<-10
 x
 ```
 
+
+YOUR TURN:
 Now try creating a variable "y", set it equal to 7+9, and then print it out:
 ```{r}
 
 
 ```
+
+Like most languages, R has functions that help you quickly execute common tasks. Functions typically take the form of:
+
+functionName(argument1, argument2, etc....)
+
+For example, the function sqrt(number) takes the square root of a number:
+
+```{r}
+sqrt(9)
+```
+
+YOUR TURN:
+In the chunk below, create a variable 'z', set it equal to the sqare root of 90, and print it out:
+```{r}
+
+
+```
+
 
 
 
