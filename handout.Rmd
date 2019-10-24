@@ -69,20 +69,36 @@ In the chunk below, create a variable 'z', set it equal to the sqare root of 90,
 ```
 
 
+### Working with a Data Set
+
+#### Packages and Libraries
+
+Before working with data, let's quickly talk about packages and libraries in R. While some functions are built in with R (e.g. sqrt), others require users to install packages. A **package** is just a collection of functions, while a **library** is the location of where that package lives.  
 
 
+In order to load a csv file of data, we want to use the function read_csv, though this is not part of R's core functions. If we try running the function, it will fail. 
 
-This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+The **read_csv** function is part of the library "readr". So first I would need to install the package using this command (we've already installed it on this server, so we won't actually run the command):
 
-Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+install.packages("readr")
 
+Now to use the functions in readr, including read_csv, we need to load the readr library. Run the following code:
 ```{r}
-plot(cars)
+library(readr)
 ```
 
-Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
+```{r}
+myData<-read_csv("babyNames.csv")
+```
 
-When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file). 
 
-The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+Let's now load a csv file. Attaching in your workspace is a file named "babyNames.csv". This file contains a cleaned up version of annual US baby name data from the US Government (https://catalog.data.gov/dataset/baby-names-from-social-security-card-applications-national-level-data). 
+Enter this command in the code block below:
+baby.names<-read_csv("babyNames.csv");
+
+```{r}
+baby.names<-read_csv("babyNames.csv")
+```
+
+
 
