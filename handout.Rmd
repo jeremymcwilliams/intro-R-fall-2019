@@ -100,5 +100,34 @@ baby.names<-read_csv("babyNames.csv");
 baby.names<-read_csv("babyNames.csv")
 ```
 
+The variable "baby.names" now contains the full csv file in "tibble" format. A "tibble" is a type of dataset format used frequently in R, particularly with filtering, manipulating, and plotting data. In the code chunk below, enter and run "baby.names" to see the basic structure of the tibble:
 
+YOUR TURN:
+```{r}
+
+```
+
+### Popularity of your name
+
+Often with datasets you might just be interested in particular subsets of data. In the case of baby.names, say were just interested in looking at a couple names. To do so, we'll use the "filter" function, which is part of the "dplyr" package. The "dpylr" package is already installed on the system, but we'll still need to make the library available:
+
+```{r}
+library(dplyr)
+```
+
+The filter function takes a couple arguements: the data itself, and also the rules you want to filter. For example, say I only am interested in the data for which the Name is Mary. In the chunk below, I'm going to make it so:
+
+```{r}
+mary<-filter(baby.names, Name=="Mary")
+
+mary
+
+```
+
+Looking at the data, now I'm kind of interested in just the Marys who are boys (who knew?):
+
+```{r}
+boyMarys<-filter(baby.names, (Name=="Mary" & Sex=="Boys"))
+boyMarys
+```
 
