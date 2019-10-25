@@ -12,7 +12,7 @@ output:
 ### Watzek Library Digital Initiatives
 ### October 30th, 2019
 
-###### Much of the content has been borrowed from Harvard University, so thank you Harvard.
+###### Much of the content has been borrowed from Harvard University, so thank you Harvard!
 ###### https://tutorials.iq.harvard.edu/R/Rintro/Rintro.html
 
 ### Goals of this workshop:
@@ -168,4 +168,54 @@ Time to use this data to make some charts. We're going to use the powerful "ggpl
 ```{r}
 library(ggplot2)
 ```
+
+For quick and simple plots we can use the qplot function. "qplot" can accept many arguements (see here for documentation: https://ggplot2.tidyverse.org/reference/qplot.html), but for a scatterplot can minimally accept x, y, and the dataset.
+
+For example, we can plot the number of babies given the name “Diana” over time like this:
+
+```{r}
+diana <- filter(baby.names, Name == "Diana")
+
+qplot(x = Year, y = Count, data = diana)
+
+```
+
+
+As with some of the other names, there are a mix of both boys and girls named Diana. We can help differentiate between the two by adding the "color" argument:
+
+```{r}
+qplot(x = Year, y = Count, color = Sex, data = diana)
+
+```
+
+
+Now it's your turn to apply these techniques:
+
+
+YOUR TURN:
+In the chunk below, use "filter" to extract data for your name:
+```{r}
+
+```
+
+YOUR TURN:
+Plot the data you produced in the step above, with Year on the x-axis and Count on the y-axis, and use color to differentiate boys vs. girls:
+```{r}
+
+
+```
+
+
+YOUR TURN:
+Generate the same plot as above, but use lines instead of points (may require some googling):
+```{r}
+
+```
+
+
+### Plotting the most popular names
+
+Just like with Excel, sometimes you may want to add a column of data that is dependent upon calculations of other columns. We can do that in R with the "mutate" function, which is part of the dplyr library. For example, let's add a column to baby.names that inidcates the rate per 1000 
+
+
 
