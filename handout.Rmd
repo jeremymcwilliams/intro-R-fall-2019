@@ -87,10 +87,6 @@ Now to use the functions in readr, including read_csv, we need to load the readr
 library(readr)
 ```
 
-```{r}
-myData<-read_csv("babyNames.csv")
-```
-
 
 Let's now load a csv file. Attaching in your workspace is a file named "babyNames.csv". This file contains a cleaned up version of annual US baby name data from the US Government (https://catalog.data.gov/dataset/baby-names-from-social-security-card-applications-national-level-data). 
 Enter this command in the code block below:
@@ -215,7 +211,71 @@ Generate the same plot as above, but use lines instead of points (may require so
 
 ### Plotting the most popular names
 
-Just like with Excel, sometimes you may want to add a column of data that is dependent upon calculations of other columns. We can do that in R with the "mutate" function, which is part of the dplyr library. For example, let's add a column to baby.names that inidcates the rate per 1000 
+Just like with Excel, sometimes you may want to add a column of data that is dependent upon calculations of other columns. We can do that in R with the "mutate" function, which is part of the dplyr library. The mutate function takes the dataset as the first argument, and next takes the condition for the new column. For example, let's add a column to baby.names that inidcates the total count divided by 1000:
+
+```{r}
+baby.names <- mutate(baby.names, by1k = Count/1000)
+baby.names
+```
+
+#### Operating by group
+
+Because of the nested nature of out data, we want to compute rank or proportion within each Sex X Year group. The dplyr package makes this relatively easy. 
+
+```{r}
+baby.names <- mutate(group_by(baby.names, Year, Sex),
+                     Rank = rank(Count))
+baby.names
+```
+
+We first use "group_by" to isolate the categories to sort, and then the "rank" function essentially sort the grouped data by the "Count" field. And the use of the "mutate" function adds a new column "Rank" to baby.names.
+
+One thing that isn't great is that the "Rank" is kind of in the wrong order. Ideally we want the highest rank to by #1. We can accomplish that by doing the following:
+
+```{r}
+baby.names <- mutate(group_by(baby.names, Year, Sex),
+                     Rank = rank(-Count))
+baby.names
+
+```
 
 
 
+Let's now reset the dataset in preperation for the last exercise:
+```{r}
+rm(baby.names)
+baby.names<-read_csv("babyNames.csv")
+```
+
+
+In this exercise your goal is to identify the most popular names for each year.
+
+YOUR TURN:
+Use mutate and group_by to create a column named “Proportion” where Proportion = Count/sum(Count) for each Year X Sex group.
+```{r}
+
+
+```
+
+
+
+YOUR TURN:
+Use mutate and group_by to create a column named “Rank” where Rank = rank(-Count) for each Year X Sex group.
+```{r}
+
+```
+
+
+YOUR TURN:
+Filter the baby names data to display only the most popular name for each Year X Sex group.
+```{r}
+
+```
+
+YOUR TURN:
+Plot the data produced in step 4, putting Year on the x-axis and Proportion on the y-axis. How has the proportion of babies given the most popular name changed over time?
+```{r}
+
+
+
+```
