@@ -1,5 +1,6 @@
 # intro-R-fall-2019
-Workshop 1 of fall 2019 workshop series.
+Workshop 1 of fall 2019 workshop series.  
+Link to this page: https://bit.ly/R-workshop1
 
 ### Info for logging in to Rstudio Server
 
@@ -13,7 +14,10 @@ Workshop 1 of fall 2019 workshop series.
 
 in console (lower left-hand corner):
 * library(usethis)
-* use_course("https://github.com/jeremymcwilliams/intro-R-fall-2019/archive/1.0.zip")
+* use_course("https://github.com/jeremymcwilliams/intro-R-fall-2019/archive/1.1.zip")
 
+After running the command above, you'll be prompted whether to download to your current directory. Go ahead and answer in the affirmative (you'll be presented with variations on "yes"). Once the course files download, you'll be prompted as to whether to delete the zip file. Again, answer in the affirmative. Once you do, click "Save", and your window will refresh to a new R session.  
+
+To get started, click "handout.Rmd" in the files window, and then minimize the console window.
 
 

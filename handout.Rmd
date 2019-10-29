@@ -1,10 +1,10 @@
 ---
 title: "Intro to R and Data Visualization Workshop Handout"
 output:
+  pdf_document: default
+  html_notebook: default
   html_document:
     df_print: paged
-  html_notebook: default
-  pdf_document: default
 ---
 
 # Intro to R & Data Visualization workshop
@@ -22,16 +22,18 @@ output:
 * Work with a data set
 * Create some basic plots
 
+Before diving in, you might be wondering what's up with the weird syntax of this document. It's "R Markdown", which is a shorthand for creating formatted text in documents. One of the neat things about R Notebooks (like this document) is that you can "knit" it to an output like PDF or HTML. To get a sneak peek, click on the down arrow next to the "Knit" menu above, and select "Knit to PDF" (you may have to disable your browser's popup blocker). The resulting document is a mix of formatted text, code samples, and outputs from those code samples. This feature is pretty spiffy for creating tutorials, reports, etc. in which R code and output is used.
+
 
 ### Basic R code
 
-R code can be run in the console, or as a "code chunk" within this R notebook. Below is a code chunk:
+R code can be run in the console, or as a "code chunk" within this R notebook. Below is a code chunk. You can run the code chunk by clicking the green "play" button.
 
 ```{r}
 2+2
 ```
 
-You can run the code chunk by clicking the green "play" button. Throughout this workshop, there will be a mix of code chunks pre-populated with code, and empty code chunks. The empty code chunks give you an opportunity to write code, run it, and see the output. Each of the empty chunks are preceded with "YOUR TURN:".
+Throughout this workshop, there will be a mix of code chunks pre-populated with code, and empty code chunks. The empty code chunks give you an opportunity to write code, run it, and see the output. Each of the empty chunks are preceded with "YOUR TURN:".
 
 #### Assigning variables
 
@@ -51,6 +53,16 @@ Now try creating a variable "y", set it equal to 7+9, and then print it out:
 
 ```
 
+One can also go crazy and assign two variables at the same time:
+
+```{r}
+a<-b<-100
+a
+b
+```
+
+#### Functions
+
 Like most languages, R has functions that help you quickly execute common tasks. Functions typically take the form of:
 
 functionName(argument1, argument2, etc....)
@@ -62,21 +74,28 @@ sqrt(9)
 ```
 
 YOUR TURN:
-In the chunk below, create a variable 'z', set it equal to the sqare root of 90, and print it out:
+In the chunk below, create a variable 'z', set it equal to the square root of 90, and print it out:
 ```{r}
 
 
 ```
+
+One nice thing about RStudio Server is that you can readily access documentation for functions by using the "help" command:
+
+```{r}
+help(sqrt)
+```
+
+The documentation appears in the lower right window in the "help" tab.
 
 
 ### Working with a Data Set
 
 #### Packages and Libraries
 
-Before working with data, let's quickly talk about packages and libraries in R. While some functions are built in with R (e.g. sqrt), others require users to install packages. A **package** is just a collection of functions, while a **library** is the location of where that package lives.  
+Before working with data, let's quickly talk about packages and libraries in R. While some functions are built in with R (e.g. sqrt), others require users to install packages. A **package** is just a collection of functions, while a **library** is the location of where that package lives.    
 
-
-In order to load a csv file of data, we want to use the function read_csv, though this is not part of R's core functions. If we try running the function, it will fail. 
+In order to load a csv file of data, we want to use the function read_csv, though this is not part of R's core functions. If we try running the function, it will fail.  
 
 The **read_csv** function is part of the library "readr". So first I would need to install the package using this command (we've already installed it on this server, so we won't actually run the command):
 
@@ -279,3 +298,7 @@ Plot the data produced in step 4, putting Year on the x-axis and Proportion on t
 
 
 ```
+
+
+
+
