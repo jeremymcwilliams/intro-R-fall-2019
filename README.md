@@ -4,13 +4,13 @@ Link to this page: https://bit.ly/R-workshop1
 
 ### Info for logging in to Rstudio Server
 
-* Visit https://datasci.watzek.cloud
+* Visit <a href='https://datasci.watzek.cloud' target='_blank'>https://datasci.watzek.cloud</a>
 * Sign in with your Lewis & Clark username and password. If you haven't created an account yet, you'll be prompted to create a password.
 * Once signed in, click "RStudio Server", after which you will need to sign in again (LC username / password you just created)
 
 
 
-### Loading the workshop file:
+### Loading the workshop content:
 
 in console (lower left-hand corner):
 * library(usethis)
